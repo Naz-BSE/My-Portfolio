@@ -103,7 +103,6 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1002;
-            /* FIX: This pushes the icon to the right side on mobile */
             margin-left: auto; 
         }
 
@@ -320,6 +319,21 @@
             .nav-left, .nav-socials { display: none; }
             .hamburger { display: block; }
             .logo { position: absolute; left: 50%; transform: translateX(-50%); }
+
+            /* --- NEW CODE: ALWAYS SHOW TITLE ON MOBILE --- */
+            .overlay {
+                opacity: 1; /* Always visible on mobile */
+                /* Remove solid background, replace with gradient at bottom */
+                background: linear-gradient(to top, rgba(11, 46, 51, 0.9), transparent 60%);
+                justify-content: flex-end; /* Push text to bottom */
+                padding-bottom: 30px; /* Space from bottom */
+            }
+
+            .cat-title {
+                color: white; /* Change text to white to read over photos */
+                font-size: 2.2rem;
+                text-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Shadow for legibility */
+            }
         }
         
         @media (max-width: 600px) {
@@ -477,5 +491,4 @@
     </script>
 
 </body>
-
 </html>
